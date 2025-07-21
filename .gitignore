@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+nutriwise/
+nutriwise/
+.nutriwise_env/
+.nutriwiseAI/
+*.egg-info/
+
+# Flask-related cache/logs
+instance/
+*.log
+
+# VSCode settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test result cache
+.pytest_cache/
+
+# Pip logs and metadata
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter notebook checkpoints (if you use them)
+.ipynb_checkpoints/
+
+# Node modules (if frontend like Angular is present)
+node_modules/
+dist/
+build/
