@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriWise AI Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="bot-avatar">
+                    <div class="avatar-icon">🥗</div>
+                    <div class="status-indicator"></div>
+                </div>
+                <div class="bot-info">
+                    <h2 class="bot-name">NutriWise AI</h2>
+                    <p class="bot-status">Certified Kenyan Nutritionist • Online</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="minimize-btn" id="minimizeBtn" title="Minimize">−</button>
+                <button class="close-btn" id="closeBtn" title="Close">×</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-message">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>Karibu! I'm NutriWise AI, your certified Kenyan nutritionist. 🇰🇪</p>
+                            <p>I'm here to provide you with affordable, culturally relevant nutrition advice tailored for Kenyans. Whether you need help with:</p>
+                            <ul>
+                                <li>Traditional Kenyan foods and their benefits</li>
+                                <li>Budget-friendly meal planning</li>
+                                <li>Managing health conditions through diet</li>
+                                <li>Child and maternal nutrition</li>
+                                <li>Weight management strategies</li>
+                            </ul>
+                            <p>Just ask me anything about nutrition! How can I help you today?</p>
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Questions -->
+            <div class="suggested-questions" id="suggestedQuestions">
+                <div class="suggestions-title">Quick questions to get started:</div>
+                <div class="suggestion-pills">
+                    <button class="suggestion-pill" data-question="What are healthy traditional Kenyan foods I should eat more often?">
+                        Traditional foods
+                    </button>
+                    <button class="suggestion-pill" data-question="How can I eat healthy on a budget of 500 shillings per week?">
+                        Budget meals
+                    </button>
+                    <button class="suggestion-pill" data-question="What should a pregnant woman eat during pregnancy?">
+                        Pregnancy nutrition
+                    </button>
+                    <button class="suggestion-pill" data-question="What foods help children grow strong and healthy?">
+                        Child nutrition
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <div class="typing-animation">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="typing-text">NutriWise is thinking...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Ask me about nutrition, traditional foods, meal planning..."
+                    rows="1"
+                    maxlength="500"
+                ></textarea>
+                <div class="input-actions">
+                    <button class="attachment-btn" id="attachmentBtn" title="Attach file" disabled>📎</button>
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="input-footer">
+                <div class="character-count">
+                    <span id="charCount">0</span>/500
+                </div>
+                <div class="powered-by">
+                    Powered by NutriWise AI
+                </div>
+            </div>
+        </div>
+
+        <!-- Connection Status -->
+        <div class="connection-status" id="connectionStatus">
+            <div class="status-icon">⚠️</div>
+            <div class="status-text">Connection lost. Trying to reconnect...</div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Initializing NutriWise AI...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
